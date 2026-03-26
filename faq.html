@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiM Committee – Music in Motion Ottawa</title>
-  <meta name="description" content="Meet the committee members of Music in Motion Ottawa.">
+  <title>FAQ – Music in Motion Ottawa</title>
+  <meta name="description" content="Frequently asked questions about performing with Music in Motion Ottawa.">
   <link rel="icon" href="images/mim.jpg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,8 +27,8 @@
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#events">Events</a></li>
         <li><a href="index.html#videos">Videos</a></li>
-        <li><a href="committee.html" class="active">Committee</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="committee.html">Committee</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
         <li><a href="index.html#join" class="nav-cta">Join Us</a></li>
       </ul>
     </div>
@@ -37,18 +37,79 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <h1 class="page-title">MiM Committee</h1>
-      <p class="page-subtitle">Meet the team behind Music in Motion Ottawa</p>
+      <h1 class="page-title">Frequently Asked Questions</h1>
+      <p class="page-subtitle">Everything you need to know about performing with Music in Motion</p>
     </div>
   </header>
 
-  <!-- Committee Members -->
+  <!-- FAQ Section -->
   <section class="section">
     <div class="container">
-      <div class="committee-grid" id="committee-grid">
-        <p class="placeholder-text revealed">
-          Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.
-        </p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I'm not very confident in my playing level. Should I still apply to perform?
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! Performers of all age groups and skill levels are welcome. What matters most is your willingness to share music with the seniors — they truly appreciate it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            If a concert is cancelled due to an outbreak at a retirement home, will it be rescheduled? Will I still receive volunteer hours?
+          </button>
+          <div class="faq-answer">
+            <p>Unfortunately, cancelled concerts are not rescheduled. However, you will still receive practice volunteer hours for the cancelled event.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I have a scheduling conflict. Can I request a specific performance time?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! When registering for a concert, simply add your preference (e.g., performing earlier or later) in the "Special Notes" field on the registration form.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does the retirement home provide musical instruments?
+          </button>
+          <div class="faq-answer">
+            <p>A piano is available at the retirement home. For all other instruments, you will need to bring your own.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I'm doing a vocal performance. What do I need to bring?
+          </button>
+          <div class="faq-answer">
+            <p>You need to bring your own backing track (e.g., a phone with a YouTube link). We can provide a microphone and Bluetooth speaker upon request — just let us know in the "Special Notes" section of the registration form.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I'm performing in an ensemble. Does everyone in the group receive volunteer hours?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Every member of an ensemble receives the same volunteer hours as a solo performer.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is it possible to get a video recording of my performance?
+          </button>
+          <div class="faq-answer">
+            <p>Yes, video recordings are available upon request.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -73,7 +134,6 @@
       // Footer
       document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-      // Footer social icons
       var svgInstagram = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
       var svgYouTube = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>';
       var svgEmail = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
@@ -88,6 +148,24 @@
       if (C.social.email) {
         footerSocial.innerHTML += '<a href="mailto:' + C.social.email + '" aria-label="Email">' + svgEmail + '</a>';
       }
+
+      // FAQ accordion
+      document.querySelectorAll(".faq-question").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains("open");
+
+          document.querySelectorAll(".faq-item.open").forEach(function (openItem) {
+            openItem.classList.remove("open");
+            openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          });
+
+          if (!isOpen) {
+            item.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
 
       // Mobile nav toggle
       var toggle = document.querySelector(".nav-toggle");
