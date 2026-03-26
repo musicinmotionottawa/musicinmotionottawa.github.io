@@ -28,6 +28,7 @@
         <li><a href="#events">Events</a></li>
         <li><a href="#videos">Videos</a></li>
         <li><a href="committee.html">Committee</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#join" class="nav-cta">Join Us</a></li>
       </ul>
     </div>
@@ -87,6 +88,42 @@
       </div>
       <div style="text-align:center; margin-top:32px;">
         <a href="committee.html" class="btn btn-outline">Meet the Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I'm not very confident in my playing level. Should I still apply to perform?
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! Performers of all age groups and skill levels are welcome. What matters most is your willingness to share music with the seniors — they truly appreciate it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does the retirement home provide musical instruments?
+          </button>
+          <div class="faq-answer">
+            <p>A piano is available at the retirement home. For all other instruments, you will need to bring your own.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            I'm performing in an ensemble. Does everyone in the group receive volunteer hours?
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Every member of an ensemble receives the same volunteer hours as a solo performer.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="faq.html" class="btn btn-outline">View All FAQs</a>
       </div>
     </div>
   </section>
@@ -262,8 +299,24 @@
         });
       });
 
+      // -- FAQ accordion --
+      document.querySelectorAll(".faq-question").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains("open");
+          document.querySelectorAll(".faq-item.open").forEach(function (openItem) {
+            openItem.classList.remove("open");
+            openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+          });
+          if (!isOpen) {
+            item.classList.add("open");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
       // -- Scroll reveal animation --
-      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container, .committee-grid");
+      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container, .committee-grid, .faq-list");
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {

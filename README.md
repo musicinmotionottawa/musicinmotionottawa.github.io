@@ -10,14 +10,42 @@ This is the source code for the Music in Motion Ottawa website, hosted free on G
 
 All editable content (events, links, descriptions) lives in **one file**: `config.js`
 
-### Steps to update
+> **Note:** The `main` branch is protected. All changes must be submitted via a **Pull Request (PR)** and approved before they are merged.
+
+### Steps to update (via Pull Request)
 
 1. Go to https://github.com/musicinmotionottawa/musicinmotionottawa.github.io
 2. Click on **`config.js`**
 3. Click the **pencil icon** (top-right of the file) to edit
 4. Make your changes (see examples below)
-5. Scroll down and click **"Commit changes"**
-6. The website will update automatically within a few minutes
+5. Scroll down — instead of committing directly, select **"Create a new branch for this commit and start a pull request"**
+6. Give your branch a descriptive name (e.g. `add-june-event`)
+7. Click **"Propose changes"**
+8. On the next page, review your changes and click **"Create pull request"**
+9. Wait for a maintainer to review and merge your PR
+10. Once merged, the website will update automatically within a few minutes
+
+### Steps to update (via command line)
+
+```bash
+# 1. Clone the repo (first time only)
+git clone https://github.com/musicinmotionottawa/musicinmotionottawa.github.io.git
+cd musicinmotionottawa.github.io
+
+# 2. Create a new branch
+git checkout -b your-branch-name
+
+# 3. Make your changes, then commit
+git add .
+git commit -m "Describe your change"
+
+# 4. Push your branch
+git push -u origin your-branch-name
+
+# 5. Open a Pull Request
+#    Go to the repo on GitHub — you'll see a prompt to create a PR.
+#    Or use GitHub CLI: gh pr create --title "Your title" --body "Description"
+```
 
 ### Common updates
 
@@ -54,7 +82,7 @@ Find the `videos: [` section. Remove the `//` at the start of a line (or add a n
 Find the `social:` section and paste your Instagram URL:
 
 ```js
-instagram: "https://www.instagram.com/musicinmotionottawa",
+instagram: "https://www.instagram.com/musicinmotion_ottawa/",
 ```
 
 #### Update the mailing list link
@@ -83,4 +111,4 @@ Open `index.html` in any web browser -- no server needed.
 
 ### Hosting
 
-The site is hosted via GitHub Pages from the `main` branch. Any push to `main` triggers an automatic deployment.
+The site is hosted via GitHub Pages from the `main` branch. Any merge to `main` triggers an automatic deployment. Direct pushes to `main` are not allowed — all changes must go through a Pull Request.
