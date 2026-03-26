@@ -57,7 +57,7 @@ const SITE_CONFIG = {
   // -- Social media links --
   // Leave a URL empty ("") to hide that icon.
   social: {
-    instagram: "",   // e.g. "https://www.instagram.com/musicinmotionottawa"
+    instagram: "https://www.instagram.com/musicinmotion_ottawa/",
     youtube: "",     // e.g. "https://www.youtube.com/@musicinmotionottawa"
     email: "musicinmotionottawa@gmail.com"
   },
