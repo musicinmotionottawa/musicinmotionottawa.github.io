@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music in Motion Ottawa</title>
+  <meta name="description" content="Music in Motion Ottawa is a not-for-profit organization that organizes monthly concerts at retirement homes, providing youth with performance and volunteer opportunities.">
+  <link rel="icon" href="images/mim.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <img src="images/mim.jpg" alt="Music in Motion Ottawa logo" id="nav-logo-img">
+        <span id="nav-org-name">Music in Motion</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#join" class="nav-cta">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="images/mim.jpg" alt="Music in Motion Ottawa logo" class="hero-logo" id="hero-logo-img">
+      <h1 id="hero-title">Music in Motion Ottawa</h1>
+      <p id="hero-tagline" class="hero-tagline">Bringing music to the heart of our community</p>
+      <a href="#join" class="btn btn-primary">Join Us</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 id="about-heading" class="section-title">Who We Are</h2>
+      <div id="about-body" class="about-text">
+        <!-- Populated by config.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Upcoming Events -->
+  <section id="events" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events</h2>
+      <div id="events-grid" class="events-grid">
+        <!-- Populated by config.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section id="videos" class="section">
+    <div class="container">
+      <h2 class="section-title">Videos</h2>
+      <div id="videos-grid" class="videos-grid">
+        <!-- Populated by config.js -->
+      </div>
+      <p id="videos-placeholder" class="placeholder-text" style="display:none;">
+        Videos coming soon! Check back for highlights from our performances.
+      </p>
+    </div>
+  </section>
+
+  <!-- Join / Mailing List -->
+  <section id="join" class="section section-cta">
+    <div class="container join-container">
+      <h2 id="join-heading" class="section-title">Join Our Mailing List</h2>
+      <p id="join-text" class="join-text">Stay up to date with upcoming performances and volunteer opportunities.</p>
+      <a id="join-btn" href="#" class="btn btn-primary btn-lg" target="_blank" rel="noopener">Sign Up Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/mim.jpg" alt="Logo" class="footer-logo">
+        <span id="footer-org-name">Music in Motion Ottawa</span>
+      </div>
+      <div id="footer-social" class="footer-social">
+        <!-- Populated by config.js -->
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Music in Motion Ottawa</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      // -- Populate page from SITE_CONFIG --
+
+      const C = SITE_CONFIG;
+
+      // Hero
+      document.getElementById("hero-title").textContent = C.orgName;
+      document.getElementById("hero-tagline").textContent = C.tagline;
+
+      // Nav
+      document.getElementById("nav-org-name").textContent = C.orgName.replace(" Ottawa", "");
+
+      // About
+      document.getElementById("about-heading").textContent = C.aboutHeading;
+      const aboutBody = document.getElementById("about-body");
+      C.aboutText.forEach(function (para) {
+        const p = document.createElement("p");
+        p.textContent = para;
+        aboutBody.appendChild(p);
+      });
+
+      // Events
+      const eventsGrid = document.getElementById("events-grid");
+      if (C.events.length === 0) {
+        eventsGrid.innerHTML = '<p class="placeholder-text">No upcoming events right now. Check back soon!</p>';
+      } else {
+        C.events.forEach(function (ev) {
+          const card = document.createElement("div");
+          card.className = "event-card";
+          card.innerHTML =
+            '<div class="event-date-badge">' +
+              '<span class="event-month">' + ev.date.split(" ")[0] + '</span>' +
+              '<span class="event-day-num">' + ev.date.split(" ")[1].replace(",", "") + '</span>' +
+            '</div>' +
+            '<div class="event-details">' +
+              '<h3>' + ev.title + '</h3>' +
+              '<p class="event-meta"><strong>' + ev.day + '</strong> &middot; ' + ev.time + '</p>' +
+              '<p class="event-location">' + ev.location + '</p>' +
+              '<p class="event-address">' + ev.address + '</p>' +
+              '<a href="' + ev.signUpUrl + '" class="btn btn-outline" target="_blank" rel="noopener">Sign Up to Perform</a>' +
+            '</div>';
+          eventsGrid.appendChild(card);
+        });
+      }
+
+      // Videos
+      var videosGrid = document.getElementById("videos-grid");
+      var videosPlaceholder = document.getElementById("videos-placeholder");
+      if (C.videos.length === 0) {
+        videosGrid.style.display = "none";
+        videosPlaceholder.style.display = "block";
+      } else {
+        C.videos.forEach(function (vid) {
+          var id = extractYouTubeId(vid.url);
+          if (!id) return;
+          var wrapper = document.createElement("div");
+          wrapper.className = "video-item";
+          wrapper.innerHTML =
+            '<div class="video-embed">' +
+              '<iframe src="https://www.youtube.com/embed/' + id + '" title="' + vid.title + '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' +
+            '</div>' +
+            '<p class="video-title">' + vid.title + '</p>';
+          videosGrid.appendChild(wrapper);
+        });
+      }
+
+      function extractYouTubeId(url) {
+        var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]{11})/);
+        return m ? m[1] : null;
+      }
+
+      // Join / Mailing list
+      document.getElementById("join-heading").textContent = C.mailingListHeading;
+      document.getElementById("join-text").textContent = C.mailingListText;
+      document.getElementById("join-btn").href = C.mailingListUrl;
+
+      // Footer
+      document.getElementById("footer-org-name").textContent = C.orgName;
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+      var footerSocial = document.getElementById("footer-social");
+      if (C.social.instagram) {
+        footerSocial.innerHTML += '<a href="' + C.social.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + svgInstagram + '</a>';
+      }
+      if (C.social.youtube) {
+        footerSocial.innerHTML += '<a href="' + C.social.youtube + '" target="_blank" rel="noopener" aria-label="YouTube">' + svgYouTube + '</a>';
+      }
+      if (C.social.email) {
+        footerSocial.innerHTML += '<a href="mailto:' + C.social.email + '" aria-label="Email">' + svgEmail + '</a>';
+      }
+
+      // Inline SVG icons
+      var svgInstagram = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
+      var svgYouTube = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>';
+      var svgEmail = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
+
+      // Re-run social icons now that SVGs are defined
+      footerSocial.innerHTML = "";
+      if (C.social.instagram) {
+        footerSocial.innerHTML += '<a href="' + C.social.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + svgInstagram + '</a>';
+      }
+      if (C.social.youtube) {
+        footerSocial.innerHTML += '<a href="' + C.social.youtube + '" target="_blank" rel="noopener" aria-label="YouTube">' + svgYouTube + '</a>';
+      }
+      if (C.social.email) {
+        footerSocial.innerHTML += '<a href="mailto:' + C.social.email + '" aria-label="Email">' + svgEmail + '</a>';
+      }
+
+      // -- Mobile nav toggle --
+      var toggle = document.querySelector(".nav-toggle");
+      var navLinks = document.querySelector(".nav-links");
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", !expanded);
+        navLinks.classList.toggle("open");
+      });
+
+      // Close mobile nav on link click
+      document.querySelectorAll(".nav-links a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // -- Sticky nav background on scroll --
+      var navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 60) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // -- Smooth scroll --
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+          var target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // -- Scroll reveal animation --
+      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container");
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      revealEls.forEach(function (el) { observer.observe(el); });
+
+    })();
+  </script>
+
+</body>
+</html>
