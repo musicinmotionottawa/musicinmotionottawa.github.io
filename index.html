@@ -27,6 +27,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#videos">Videos</a></li>
+        <li><a href="committee.html">Committee</a></li>
         <li><a href="#join" class="nav-cta">Join Us</a></li>
       </ul>
     </div>
@@ -73,6 +74,20 @@
       <p id="videos-placeholder" class="placeholder-text" style="display:none;">
         Videos coming soon! Check back for highlights from our performances.
       </p>
+    </div>
+  </section>
+
+  <!-- Committee -->
+  <section id="committee" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">MiM Committee</h2>
+      <p class="committee-intro">Meet the team behind Music in Motion Ottawa</p>
+      <div id="committee-grid" class="committee-grid">
+        <p class="placeholder-text">Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.</p>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <a href="committee.html" class="btn btn-outline">Meet the Team</a>
+      </div>
     </div>
   </section>
 
@@ -248,7 +263,7 @@
       });
 
       // -- Scroll reveal animation --
-      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container");
+      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container, .committee-grid");
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {

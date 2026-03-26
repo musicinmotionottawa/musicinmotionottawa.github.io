@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiM Committee – Music in Motion Ottawa</title>
+  <meta name="description" content="Meet the committee members of Music in Motion Ottawa.">
+  <link rel="icon" href="images/mim.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <img src="images/mim.jpg" alt="Music in Motion Ottawa logo" id="nav-logo-img">
+        <span id="nav-org-name">Music in Motion</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#videos">Videos</a></li>
+        <li><a href="committee.html" class="active">Committee</a></li>
+        <li><a href="index.html#join" class="nav-cta">Join Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">MiM Committee</h1>
+      <p class="page-subtitle">Meet the team behind Music in Motion Ottawa</p>
+    </div>
+  </header>
+
+  <!-- Committee Members -->
+  <section class="section">
+    <div class="container">
+      <div class="committee-grid" id="committee-grid">
+        <p class="placeholder-text revealed">
+          Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/mim.jpg" alt="Logo" class="footer-logo">
+        <span id="footer-org-name">Music in Motion Ottawa</span>
+      </div>
+      <div id="footer-social" class="footer-social"></div>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Music in Motion Ottawa</p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var C = SITE_CONFIG;
+
+      // Footer
+      document.getElementById("footer-year").textContent = new Date().getFullYear();
+
+      // Footer social icons
+      var svgInstagram = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
+      var svgYouTube = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>';
+      var svgEmail = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
+
+      var footerSocial = document.getElementById("footer-social");
+      if (C.social.instagram) {
+        footerSocial.innerHTML += '<a href="' + C.social.instagram + '" target="_blank" rel="noopener" aria-label="Instagram">' + svgInstagram + '</a>';
+      }
+      if (C.social.youtube) {
+        footerSocial.innerHTML += '<a href="' + C.social.youtube + '" target="_blank" rel="noopener" aria-label="YouTube">' + svgYouTube + '</a>';
+      }
+      if (C.social.email) {
+        footerSocial.innerHTML += '<a href="mailto:' + C.social.email + '" aria-label="Email">' + svgEmail + '</a>';
+      }
+
+      // Mobile nav toggle
+      var toggle = document.querySelector(".nav-toggle");
+      var navLinks = document.querySelector(".nav-links");
+      toggle.addEventListener("click", function () {
+        var expanded = toggle.getAttribute("aria-expanded") === "true";
+        toggle.setAttribute("aria-expanded", !expanded);
+        navLinks.classList.toggle("open");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          navLinks.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
