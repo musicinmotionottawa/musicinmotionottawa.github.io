@@ -54,6 +54,32 @@ const SITE_CONFIG = {
     // { title: "Holiday Concert 2025",           url: "https://youtu.be/XXXXXXXXXXX" },
   ],
 
+  // -- Gallery --
+  // To add a new photo, copy one of the objects below and
+  // change the fields. Newest photos should go at the top.
+  gallery: [
+    { src: "images/Timberwalk-2026-04-12.jpg",                    caption: "Performance at Timberwalk Retirement Community" },
+    { src: "images/ChartwellStillwaterCreek-2026-04-18.jpg",       caption: "Performance at Chartwell Stillwater Creek" },
+    { src: "images/ChartwellStillwaterCreek-Schedule-2026-04-18.jpg", caption: "Concert Schedule at Chartwell Stillwater Creek" },
+  ],
+
+  // -- Past concert programs --
+  // To add a new program, copy one of the objects below and
+  // change the fields. Newest programs should go at the top.
+  programs: [
+    { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "April 18, 2026", file: "documents/2026-04-18 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
+    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 12, 2026", file: "documents/2026-04-12 MiM Performance at Timberwalk Retirement Community.pdf" },
+    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "March 8, 2026",  file: "documents/2026-03-08 MiM Performance at Timberwalk Retirement Community.pdf" },
+    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "December 14, 2025", file: "documents/2025-12-14 MiM Performance.pdf at Timberwalk Retirement Community.pdf" },
+    { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "December 6, 2025",  file: "documents/2025-12-06 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
+    { title: "Pathways to Independence Program",                                   date: "November 16, 2025", file: "documents/2025-11-16 Pathways to Independence Program.pdf" },
+    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "November 9, 2025",  file: "documents/2025-11-09 MiM Performance at Timberwalk Retirement Community.pdf" },
+    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 13, 2025", file: "documents/2025-09-13 MiM Performance at Timberwalk Retirement Community.pdf" },
+  ],
+
+  // -- Media consent form --
+  mediaConsentForm: "documents/Music In Motion Media Consent Form.pdf",
+
   // -- Social media links --
   // Leave a URL empty ("") to hide that icon.
   social: {

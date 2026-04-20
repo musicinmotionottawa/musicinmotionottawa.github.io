@@ -29,6 +29,7 @@
         <li><a href="#videos">Videos</a></li>
         <li><a href="committee.html">Committee</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="programs.html">Programs</a></li>
         <li><a href="#join" class="nav-cta">Join Us</a></li>
       </ul>
     </div>
@@ -55,8 +56,21 @@
     </div>
   </section>
 
+  <!-- Gallery -->
+  <section id="gallery" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <div id="gallery-grid" class="gallery-grid">
+        <!-- Populated by config.js -->
+      </div>
+      <p id="gallery-placeholder" class="placeholder-text" style="display:none;">
+        Photos coming soon! Check back for highlights from our performances.
+      </p>
+    </div>
+  </section>
+
   <!-- Upcoming Events -->
-  <section id="events" class="section section-alt">
+  <section id="events" class="section">
     <div class="container">
       <h2 class="section-title">Upcoming Events</h2>
       <div id="events-grid" class="events-grid">
@@ -66,7 +80,7 @@
   </section>
 
   <!-- Videos -->
-  <section id="videos" class="section">
+  <section id="videos" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Videos</h2>
       <div id="videos-grid" class="videos-grid">
@@ -79,7 +93,7 @@
   </section>
 
   <!-- Committee -->
-  <section id="committee" class="section section-alt">
+  <section id="committee" class="section">
     <div class="container">
       <h2 class="section-title">MiM Committee</h2>
       <p class="committee-intro">Meet the team behind Music in Motion Ottawa</p>
@@ -93,7 +107,7 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="section">
+  <section id="faq" class="section section-alt">
     <div class="container">
       <h2 class="section-title">Frequently Asked Questions</h2>
       <div class="faq-list">
@@ -173,6 +187,23 @@
         p.textContent = para;
         aboutBody.appendChild(p);
       });
+
+      // Gallery
+      var galleryGrid = document.getElementById("gallery-grid");
+      var galleryPlaceholder = document.getElementById("gallery-placeholder");
+      if (C.gallery.length === 0) {
+        galleryGrid.style.display = "none";
+        galleryPlaceholder.style.display = "block";
+      } else {
+        C.gallery.forEach(function (photo) {
+          var item = document.createElement("div");
+          item.className = "gallery-item";
+          item.innerHTML =
+            '<img src="' + photo.src + '" alt="' + photo.caption + '" loading="lazy">' +
+            '<p class="gallery-caption">' + photo.caption + '</p>';
+          galleryGrid.appendChild(item);
+        });
+      }
 
       // Events
       const eventsGrid = document.getElementById("events-grid");
@@ -316,7 +347,7 @@
       });
 
       // -- Scroll reveal animation --
-      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container, .committee-grid, .faq-list");
+      var revealEls = document.querySelectorAll(".section-title, .event-card, .video-item, .about-text, .join-container, .committee-grid, .faq-list, .gallery-item");
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
