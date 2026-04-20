@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiM Committee – Music in Motion Ottawa</title>
-  <meta name="description" content="Meet the committee members of Music in Motion Ottawa.">
+  <title>Programs – Music in Motion Ottawa</title>
+  <meta name="description" content="Browse past concert programs from Music in Motion Ottawa performances.">
   <link rel="icon" href="images/mim.jpg" type="image/jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +27,9 @@
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#events">Events</a></li>
         <li><a href="index.html#videos">Videos</a></li>
-        <li><a href="committee.html" class="active">Committee</a></li>
+        <li><a href="committee.html">Committee</a></li>
         <li><a href="faq.html">FAQ</a></li>
-        <li><a href="programs.html">Programs</a></li>
+        <li><a href="programs.html" class="active">Programs</a></li>
         <li><a href="index.html#join" class="nav-cta">Join Us</a></li>
       </ul>
     </div>
@@ -38,19 +38,20 @@
   <!-- Page Header -->
   <header class="page-header">
     <div class="container">
-      <h1 class="page-title">MiM Committee</h1>
-      <p class="page-subtitle">Meet the team behind Music in Motion Ottawa</p>
+      <h1 class="page-title">Concert Programs</h1>
+      <p class="page-subtitle">Browse programs from our past performances</p>
     </div>
   </header>
 
-  <!-- Committee Members -->
+  <!-- Programs Section -->
   <section class="section">
     <div class="container">
-      <div class="committee-grid" id="committee-grid">
-        <p class="placeholder-text revealed">
-          Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.
-        </p>
+      <div id="programs-grid" class="programs-grid">
+        <!-- Populated by config.js -->
       </div>
+      <p id="programs-placeholder" class="placeholder-text" style="display:none;">
+        Programs coming soon! Check back after our next performance.
+      </p>
     </div>
   </section>
 
@@ -71,10 +72,30 @@
     (function () {
       var C = SITE_CONFIG;
 
+      // Programs
+      var grid = document.getElementById("programs-grid");
+      var placeholder = document.getElementById("programs-placeholder");
+
+      if (C.programs.length === 0) {
+        grid.style.display = "none";
+        placeholder.style.display = "block";
+      } else {
+        C.programs.forEach(function (prog) {
+          var card = document.createElement("div");
+          card.className = "program-card";
+          card.innerHTML =
+            '<div class="program-info">' +
+              '<h3>' + prog.title + '</h3>' +
+              '<p class="program-date">' + prog.date + '</p>' +
+            '</div>' +
+            '<a href="' + encodeURI(prog.file) + '" class="btn btn-outline" target="_blank" rel="noopener">View PDF</a>';
+          grid.appendChild(card);
+        });
+      }
+
       // Footer
       document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-      // Footer social icons
       var svgInstagram = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>';
       var svgYouTube = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>';
       var svgEmail = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>';
