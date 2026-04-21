@@ -80,16 +80,25 @@
         grid.style.display = "none";
         placeholder.style.display = "block";
       } else {
-        C.programs.forEach(function (prog) {
-          var card = document.createElement("div");
-          card.className = "program-card";
-          card.innerHTML =
-            '<div class="program-info">' +
-              '<h3>' + prog.title + '</h3>' +
-              '<p class="program-date">' + prog.date + '</p>' +
-            '</div>' +
-            '<a href="' + encodeURI(prog.file) + '" class="btn btn-outline" target="_blank" rel="noopener">View PDF</a>';
-          grid.appendChild(card);
+        C.programs.forEach(function (group) {
+          if (group.concerts.length === 0) return;
+
+          var yearHeading = document.createElement("h2");
+          yearHeading.className = "programs-year-heading";
+          yearHeading.textContent = "School Year " + group.year;
+          grid.appendChild(yearHeading);
+
+          group.concerts.forEach(function (prog) {
+            var card = document.createElement("div");
+            card.className = "program-card";
+            card.innerHTML =
+              '<div class="program-info">' +
+                '<h3>' + prog.title + '</h3>' +
+                '<p class="program-date">' + prog.date + '</p>' +
+              '</div>' +
+              '<a href="' + encodeURI(prog.file) + '" class="btn btn-outline" target="_blank" rel="noopener">View PDF</a>';
+            grid.appendChild(card);
+          });
         });
       }
 
