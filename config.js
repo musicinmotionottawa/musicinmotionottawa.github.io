@@ -50,21 +50,45 @@ const SITE_CONFIG = {
   // change the fields. Newest photos should go at the top.
   gallery: [
     { src: "images/Timberwalk-2026-04-12.jpg",                    caption: "Performance at Timberwalk Retirement Community" },
-    { src: "images/ChartwellStillwaterCreek-2026-04-18.jpg",       caption: "Performance at Chartwell Stillwater Creek" },
+    { src: "images/ChartwellStillwaterCreek-2026-04-18.jpg",       caption: "Performance at Chartwell Stillwater Creek Retirement Residence" },
   ],
 
   // -- Past concert programs --
-  // To add a new program, copy one of the objects below and
-  // change the fields. Newest programs should go at the top.
+  // Programs are grouped by school year. To add a new school year,
+  // copy one of the { year: "...", concerts: [...] } blocks below.
+  // To add a new program within a year, copy a concert entry.
+  // Newest school years and concerts should go at the top.
   programs: [
-    { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "April 18, 2026", file: "documents/2026-04-18 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
-    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 12, 2026", file: "documents/2026-04-12 MiM Performance at Timberwalk Retirement Community.pdf" },
-    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "March 8, 2026",  file: "documents/2026-03-08 MiM Performance at Timberwalk Retirement Community.pdf" },
-    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "December 14, 2025", file: "documents/2025-12-14 MiM Performance.pdf at Timberwalk Retirement Community.pdf" },
-    { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "December 6, 2025",  file: "documents/2025-12-06 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
-    { title: "Pathways to Independence Program",                                   date: "November 16, 2025", file: "documents/2025-11-16 Pathways to Independence Program.pdf" },
-    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "November 9, 2025",  file: "documents/2025-11-09 MiM Performance at Timberwalk Retirement Community.pdf" },
-    { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 13, 2025", file: "documents/2025-09-13 MiM Performance at Timberwalk Retirement Community.pdf" },
+    {
+      year: "2025–2026",
+      concerts: [
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "April 18, 2026", file: "documents/2026-04-18 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 12, 2026", file: "documents/2026-04-12 MiM Performance at Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "March 8, 2026",  file: "documents/2026-03-08 MiM Performance at Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "December 14, 2025", file: "documents/2025-12-14 MiM Performance.pdf at Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "December 6, 2025",  file: "documents/2025-12-06 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
+        { title: "Pathways to Independence Program",                                   date: "November 16, 2025", file: "documents/2025-11-16 Pathways to Independence Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "November 9, 2025",  file: "documents/2025-11-09 MiM Performance at Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 13, 2025", file: "documents/2025-09-13 MiM Performance at Timberwalk Retirement Community.pdf" },
+      ]
+    },
+    {
+      year: "2024–2025",
+      concerts: [
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "June 14, 2025",     file: "documents/2025-06-14 Chartwell Stillwater Creek Retirement Residence.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "June 8, 2025",      file: "documents/2025-06-08 Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "May 4, 2025",       file: "documents/2025-05-04 Timberwalk Retirement Community.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "April 12, 2025",    file: "documents/2025-04-12 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 6, 2025",     file: "documents/2025-04-06 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "March 9, 2025",     file: "documents/2025-03-09 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "March 8, 2025",     file: "documents/2025-03-08 Chartwell Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "December 14, 2024", file: "documents/2024-12-14 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "November 16, 2024", file: "documents/2024-11-16 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "November 9, 2024",  file: "documents/2024-11-09 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "October 19, 2024",  file: "documents/2024-10-19 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 21, 2024", file: "documents/2024-09-21 Timberwalk Program.pdf" },
+      ]
+    },
   ],
 
   // -- Media consent form --
