@@ -89,6 +89,20 @@ const SITE_CONFIG = {
         { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 21, 2024", file: "documents/2024-09-21 Timberwalk Program.pdf" },
       ]
     },
+    {
+      year: "2023–2024",
+      concerts: [
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "June 22, 2024",   file: "documents/2024-06-22 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "June 1, 2024",    file: "documents/2024-06-01 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "May 25, 2024",    file: "documents/2024-05-25 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "May 4, 2024",     file: "documents/2024-05-04 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 20, 2024",  file: "documents/2024-04-20 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "March 23, 2024",  file: "documents/2024-03-23 Chartwell Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "February 10, 2024", file: "documents/2024-02-10 Chartwell Program.pdf" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "February 3, 2024",  file: "documents/2024-02-03 Timberwalk Program.pdf" },
+        { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "January 13, 2024",  file: "documents/2024-01-13 Chartwell Program.pdf" },
+      ]
+    },
   ],
 
   // -- Media consent form --
