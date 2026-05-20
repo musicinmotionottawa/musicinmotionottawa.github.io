@@ -27,12 +27,21 @@ const SITE_CONFIG = {
   events: [
     {
       title: "Music in Motion Performance",
-      date: "May 17, 2026",
+      date: "June 14, 2026",
       day: "Sunday",
       time: "2:00 pm – 3:00 pm",
       location: "Timberwalk Retirement Community",
       address: "1250 Maritime Way, Kanata, ON K2K 0L7",
-      signUpUrl: "https://forms.gle/o1A9pjm3NvLmkaGS8"
+      signUpUrl: "https://forms.gle/Er4KuTpEWkkTW6E37"
+    },
+    {
+      title: "Music in Motion Performance",
+      date: "June 27, 2026",
+      day: "Saturday",
+      time: "2:00 pm – 3:00 pm",
+      location: "Chartwell Stillwater Creek Retirement Residence",
+      address: "2018 Robertson Rd, Nepean, ON K2H 1C6",
+      signUpUrl: "https://forms.gle/PKV5ZbCXLc6QtjQ39"
     }
   ],
 
@@ -62,6 +71,7 @@ const SITE_CONFIG = {
     {
       year: "2025–2026",
       concerts: [
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "May 17, 2026",  file: "documents/2026-05-17 MiM Performance at Timberwalk Retirement Community.pdf" },
         { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "April 18, 2026", file: "documents/2026-04-18 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
         { title: "MiM Performance at Timberwalk Retirement Community",                 date: "April 12, 2026", file: "documents/2026-04-12 MiM Performance at Timberwalk Retirement Community.pdf" },
         { title: "MiM Performance at Timberwalk Retirement Community",                 date: "March 8, 2026",  file: "documents/2026-03-08 MiM Performance at Timberwalk Retirement Community.pdf" },
