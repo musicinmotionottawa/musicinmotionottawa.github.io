@@ -44,13 +44,13 @@
   </header>
 
   <!-- Committee Members -->
-  <section class="section">
+  <section class="section committee-section">
     <div class="container">
-      <div class="committee-grid" id="committee-grid">
-        <p class="placeholder-text revealed">
-          Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.
-        </p>
+      <div id="committee-container">
       </div>
+      <p id="committee-placeholder" class="placeholder-text" style="display:none;">
+        Committee member profiles coming soon! Check back for photos and bios of the team that makes Music in Motion possible.
+      </p>
     </div>
   </section>
 
@@ -70,6 +70,48 @@
   <script>
     (function () {
       var C = SITE_CONFIG;
+
+      // Committee members
+      var container = document.getElementById("committee-container");
+      var placeholder = document.getElementById("committee-placeholder");
+
+      if (!C.committee || C.committee.length === 0) {
+        container.style.display = "none";
+        placeholder.style.display = "block";
+      } else {
+        C.committee.forEach(function (group) {
+          if (!group.members || group.members.length === 0) return;
+
+          var heading = document.createElement("h2");
+          heading.className = "committee-section-heading";
+          heading.textContent = group.section;
+          container.appendChild(heading);
+
+          var grid = document.createElement("div");
+          grid.className = "committee-grid revealed";
+          container.appendChild(grid);
+
+          group.members.forEach(function (member) {
+            var card = document.createElement("div");
+            card.className = "committee-card";
+            var html = '';
+            if (member.photo) {
+              html += '<img src="' + member.photo + '" alt="' + member.name + '" class="committee-photo">';
+            }
+            html += '<div class="committee-info">';
+            html += '<h3 class="committee-name">' + member.name + '</h3>';
+            if (member.role) {
+              html += '<p class="committee-role">' + member.role + '</p>';
+            }
+            if (member.bio) {
+              html += '<p class="committee-bio">' + member.bio + '</p>';
+            }
+            html += '</div>';
+            card.innerHTML = html;
+            grid.appendChild(card);
+          });
+        });
+      }
 
       // Footer
       document.getElementById("footer-year").textContent = new Date().getFullYear();

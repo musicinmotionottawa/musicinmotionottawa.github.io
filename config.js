@@ -115,6 +115,51 @@ const SITE_CONFIG = {
     },
   ],
 
+  // -- Committee members --
+  // Members are grouped by section. Each group has a heading and a list of members.
+  // Optional fields: photo, bio. Leave them empty ("") or omit if not ready.
+  committee: [
+    {
+      section: "President",
+      members: [
+        { name: "Jasmin An", role: "", photo: "", bio: "" },
+      ]
+    },
+    {
+      section: "Adult Volunteers",
+      members: [
+        { name: "Hua Guo",   role: "Advisor",           photo: "", bio: "" },
+        { name: "Min Zhang", role: "Operations Officer", photo: "", bio: "" },
+      ]
+    },
+    {
+      section: "Coordinators",
+      members: [
+        { name: "Carson Li", role: "Technology",    photo: "", bio: "" },
+        { name: "Anne Wang", role: "Social Media",  photo: "", bio: "" },
+        { name: "Boyan Hu",  role: "Program",       photo: "", bio: "" },
+        { name: "Ethan Qi",  role: "Program",       photo: "", bio: "" },
+        { name: "Jenny Hu",  role: "Program",       photo: "", bio: "" },
+        { name: "Iris Xu",   role: "Program",       photo: "", bio: "" },
+        { name: "Jasper An", role: "Program",       photo: "", bio: "" },
+      ]
+    },
+    {
+      section: "Secretaries",
+      members: [
+        { name: "Yutong Du",  role: "Performers",      photo: "", bio: "" },
+        { name: "Jasper An",  role: "Volunteer Hours", photo: "", bio: "" },
+      ]
+    },
+    {
+      section: "Previous Members",
+      members: [
+        { name: "Elva Liang", role: "Program", photo: "", bio: "" },
+        { name: "Yiwen Wang", role: "Program", photo: "", bio: "" },
+      ]
+    },
+  ],
+
   // -- Media consent form --
   mediaConsentForm: "documents/Music In Motion Media Consent Form.pdf",
 
