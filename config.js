@@ -61,6 +61,13 @@ const SITE_CONFIG = {
   // Newest school years and concerts should go at the top.
   programs: [
     {
+      year: "2026–2027",
+      concerts: [
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "May 17, 2026",  file: "documents/2026-10-18 Timberwalk Retirement Community Program.jpg" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 13, 2025", file: "documents/2026-09-20 Timberwalk Retirement Community Program.jpg" },
+      ]
+    },  
+    {
       year: "2025–2026",
       concerts: [
         { title: "MiM Performance at Chartwell Stillwater Creek Retirement Residence", date: "June 27, 2026", file: "documents/2026-06-27 MiM Performance at Chartwell Stillwater Creek Retirement Residence.pdf" },
