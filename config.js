@@ -25,7 +25,17 @@ const SITE_CONFIG = {
   // To add a new event, copy one of the objects below and
   // change the fields. To remove an event, delete the { ... } block.
   // Leave this empty during summer break -- the placeholder text below will show instead.
-  events: [],
+  events: [
+    {
+  title: "Music in Motion Performance",
+  date: "November 15, 2026",
+  day: "Sunday",
+  time: "2:00 pm - 3:00 pm",
+  location: "Timberwalk Retirement Community",
+  address: "1250 Maritime Way, Kanata, ON K2K 0L7",
+  signUpUrl: "https://forms.gle/upb5hyqUv27nsGro8"
+}
+  ],
 
   // -- Videos --
   // Paste YouTube URLs here. Supported formats:
