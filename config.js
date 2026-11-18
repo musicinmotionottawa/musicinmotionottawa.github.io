@@ -72,8 +72,9 @@ const SITE_CONFIG = {
     {
       year: "2026–2027",
       concerts: [
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "November 15, 2026", file: "documents/2026-11-15 Timberwalk Retirement Community Program.jpg" },
         { title: "MiM Performance at Timberwalk Retirement Community",                 date: "October 18, 2026",  file: "documents/2026-10-18 Timberwalk Retirement Community Program.jpg" },
-        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 20, 2026", file: "documents/2026-09-20 Timberwalk Retirement Community Program.jpg" },
+        { title: "MiM Performance at Timberwalk Retirement Community",                 date: "September 20, 2026", file: "documents/2026-09-20 Timberwalk Retirement Community Program.jpg" }
       ]
     },  
     {
